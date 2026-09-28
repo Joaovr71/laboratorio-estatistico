@@ -4,31 +4,84 @@ Aplicação interativa em Python para explorar dados reais de aluguel de bicicle
 
 ## Executar no Windows
 
-Extraia o projeto, abra a pasta no VS Code ou no Explorador de Arquivos e abra um terminal **nessa pasta**, onde está `app.py`. O projeto foi validado no Windows com **Python 3.12.14** e as versões fixadas em `requirements.txt`.
+O projeto foi desenvolvido e validado no Windows com **Python 3.12.14** e com as versões de dependências definidas em `requirements.txt`.
 
-Execute os comandos abaixo, um por vez, no PowerShell. A ativação do ambiente virtual é dispensável porque os comandos usam diretamente o Python desse ambiente.
+### 1. Abra o PowerShell na pasta do projeto
+
+Extraia o projeto e abra a pasta no VS Code ou no Explorador de Arquivos. O terminal precisa estar aberto **na mesma pasta em que estão `app.py` e `requirements.txt`**.
+
+Para conferir, execute:
+
+```powershell
+dir
+```
+
+Na listagem devem aparecer, entre outros, arquivos como `app.py`, `requirements.txt`, `minhastats.py`, `graficos.py`, `dados.py` e `analise.py`.
+
+> **Importante:** não execute os comandos a partir de `C:\Windows\System32`, pois o PowerShell não encontrará os arquivos do projeto.
+
+### 2. Verifique se o Python 3.12 está instalado
+
+Execute:
+
+```powershell
+py -0
+```
+
+Se aparecer uma versão `3.12`, continue para a próxima etapa. O projeto foi validado com Python 3.12.14; usar essa versão ajuda a manter o ambiente reproduzível.
+
+Se o Python 3.12 não estiver instalado, instale essa versão e abra o terminal novamente antes de continuar.
+
+### 3. Crie o ambiente virtual
+
+Dentro da pasta do projeto, execute:
 
 ```powershell
 py -3.12 -m venv .venv
+```
+
+### 4. Instale as dependências
+
+Execute os comandos abaixo, um por vez:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+A ativação do ambiente virtual é opcional, pois os comandos acima chamam diretamente o Python da pasta `.venv`.
+
+### 5. Inicie a aplicação
+
+```powershell
 .\.venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-O navegador abre a aplicação. Se isso não acontecer, acesse o endereço local informado pelo terminal, normalmente `http://localhost:8501`. Para encerrar, volte ao terminal e pressione `Ctrl+C`.
+Quando o Streamlit iniciar, o terminal exibirá um endereço semelhante a:
 
-Para executar os testes:
+```text
+Local URL: http://localhost:8501
+```
+
+Abra `http://localhost:8501` no navegador. **Não digite `Local URL:` no PowerShell**; essa linha é apenas uma informação exibida pelo Streamlit.
+
+Para encerrar a aplicação, volte ao terminal e pressione `Ctrl+C`.
+
+### Executar os testes
+
+Com o ambiente virtual já criado e as dependências instaladas, execute:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-Se o comando `py` não for encontrado, instale o Python 3.12 e reabra o terminal. Se tiver apenas outra versão do Python instalada, instale a versão indicada para manter o ambiente reproduzível.
+Se o comando `py` não for reconhecido, instale o Python com o Python Launcher para Windows e abra um novo terminal. Para manter a compatibilidade com o ambiente em que o projeto foi validado, utilize Python 3.12.
 
 ## Identificação
 
 | Campo | Informação |
 |---|---|
-| Estudante |Joao Victor Ramos Mascarenhas |
+| Estudante | Joao Victor Ramos Mascarenhas |
 | Matrícula | 72650059 |
 
 
