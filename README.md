@@ -146,20 +146,6 @@ O script de resultados também aprovou **209 comparações numéricas** com NumP
 
 Consulte [o resumo dos testes](docs/TESTES.md), [a tabela de validação](docs/validacao.csv) e [o relatório](RELATORIO.md). Os arquivos `test_minhastats.py`, `test_dados.py` e `test_app.py` detalham os cenários, incluindo casos como amostras pequenas, variáveis constantes, dados corrompidos e interação com os sete módulos.
 
-## Atualizar resultados e gerar o PDF
 
-Para atualizar os resultados e o documento de entrega após preencher `entrega.json`:
-
-```powershell
-.\.venv\Scripts\python.exe scripts/gerar_resultados.py
-.\.venv\Scripts\python.exe scripts/gerar_pdf.py
-```
-
-`docs/descobertas.json` guarda os resultados das descobertas. As imagens de cada módulo são organizadas em `docs/modulo_0.png` a `docs/modulo_6.png`. Confira os resultados locais e o relatório antes de entregar; alterar o código ou os dados pode mudar os números e as evidências.
-
-O pacote inclui [SISTEMATIZACAO_MEC_PedalEmDados_MODELO.pdf](SISTEMATIZACAO_MEC_PedalEmDados_MODELO.pdf), uma prévia com campos para preenchimento. **Esse modelo ainda não deve ser enviado ao sistema da disciplina.** Para recriá-lo antes de preencher seus dados:
-
-```powershell
-.\.venv\Scripts\python.exe scripts/gerar_pdf.py --modelo
 ```
 
